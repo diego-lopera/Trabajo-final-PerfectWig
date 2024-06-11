@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fee3d0;
+}
+
+.containerBanner {
+    width: 100%;
+}
+
+.containerBanner img {
+    border-radius: 40px;
+    box-shadow: 5px 5px 5px #00000076;
+}
