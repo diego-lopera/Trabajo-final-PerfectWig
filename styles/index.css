@@ -1,15 +1,164 @@
 *{
     margin: 0;
     padding: 0;
-    width: 100%;
-    background-color: #fee3d0;
 }
+
+body {
+    background-color: #fee3d0;
+    font-family: Futura, 
+    "Trebuchet MS", Arial, sans-serif;
+}
+
+/* Header */
+
+.containerHeader {
+    width: 100%;
+}
+
+/* Barra de información superior */
+.containerNavbarInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    background: #000;
+}
+
+.containerSocialMediaNavbarInfo {
+    padding-top: 3px;
+}
+
+.containerSocialMediaNavbarInfo img {
+    width: 23px;
+}
+
+.containerLabelNavbarInfo {
+    margin: 0 20%;
+    align-content: center;
+}
+.containerNavbarInfo label {
+    color: #fff;
+    font-weight: 549;
+}
+
+.containerLogoNavbarInfo {
+    padding-top: 3px;
+}
+
+.containerLogoNavbarInfo img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+/* NavBar */
+
+.containerNavBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.containerNavBarTitle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+
+    #navBarTitle {
+        font-weight: 550;
+        font-size: 35px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    #navBarSubTitle {
+        font-weight: 560;
+        font-size: smaller;
+    }
+}
+
+.containerNavBarMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0 20px 0;
+
+    #navBarMenuRow {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+
+    #navBarMenuRow a {
+        color: #282224;
+        text-decoration: none;
+        font-weight: 550;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #navBarMenuRow a:hover {
+        color: #6a6767;
+    }
+}
+
+/* Main */
 
 .containerBanner {
-    width: 100%;
+    width: 99%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.25);
+    margin: 25px auto;
+
+    display: flex;
+    justify-content: space-around;
+
+    #imageLeftBanner, #imageRightBanner {
+        width: 300px;
+    }
+    
+    #imageTitleBanner {
+        height: max-content;
+        align-self: center;
+    }
 }
 
-.containerBanner img {
-    border-radius: 40px;
-    box-shadow: 5px 5px 5px #00000076;
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #282224;
+    padding: 41px 0;
+
+    .logoFooter {
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+    }
+
+    #textFooter {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+    }
+
+    .containerSocialMediaFooter {
+        text-align: end;
+    }
+
+    .containerSocialMediaFooter img {
+        width: 35px;
+    }
+
+    #WhatsAppFooter {
+        width: 32px;
+    }
+
 }
