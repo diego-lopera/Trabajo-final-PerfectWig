@@ -23,6 +23,7 @@ function register() {
         localStorage.setItem('user', JSON.stringify({ email, password, adress, name}));
 
         closeModal('registerModal');
+        location.reload();
     });
 }
 
@@ -39,6 +40,7 @@ function login() {
 
         if (user && user.email === email && user.password === password) {
             closeModal('loginModal');
+            location.reload();
         } else {
             alert("Correo y/o contraseña incorrectos");
         }
