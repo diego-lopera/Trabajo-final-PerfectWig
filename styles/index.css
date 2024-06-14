@@ -51,6 +51,7 @@ body {
     border-radius: 50%;
 }
 
+
 /* NavBar */
 
 .containerNavBar {
@@ -120,10 +121,12 @@ body {
     justify-content: space-around;
 
     #imageLeftBanner, #imageRightBanner {
-        width: 300px;
+        width: 20vw;
+        height: 100%;
     }
     
     #imageTitleBanner {
+        width: 20vw;
         height: max-content;
         align-self: center;
     }
@@ -161,4 +164,27 @@ footer {
         width: 32px;
     }
 
+}
+
+/* Modales */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 20px;
 }

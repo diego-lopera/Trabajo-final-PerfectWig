@@ -7,6 +7,8 @@
 
     <link rel="shortcut icon" href="../assets/logo.jpg" type="image/x-icon">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/index.css">
 
     <title>Perfect Wig</title>
@@ -18,12 +20,12 @@
         <div class="containerHeader">
             <div class="containerNavbarInfo">
                 <div class="containerSocialMediaNavbarInfo">
-                    <a target="_blank" href="https://www.instagram.com/ashly_perfectwig?igsh=cTdvNDRham5mNDNk"><img src="./assets/Instagram.png"
-                            alt="Instagram"></a>
-                    <a target="_blank" href="https://www.whatsapp.com/catalog/573226994908/?app_absent=0"><img src="./assets/WhatsApp.png"
-                            alt="Whatsapp"></a>
-                    <a target="_blank" href="https://www.tiktok.com/@ashly_perfectwig?_t=8n6Jut8GwlR&_r=1"><img src="./assets/TikTok.png"
-                            alt="Tik tok"></a>
+                    <a target="_blank" href="https://www.instagram.com/ashly_perfectwig?igsh=cTdvNDRham5mNDNk"><img
+                            src="./assets/Instagram.png" alt="Instagram"></a>
+                    <a target="_blank" href="https://www.whatsapp.com/catalog/573226994908/?app_absent=0"><img
+                            src="./assets/WhatsApp.png" alt="Whatsapp"></a>
+                    <a target="_blank" href="https://www.tiktok.com/@ashly_perfectwig?_t=8n6Jut8GwlR&_r=1"><img
+                            src="./assets/TikTok.png" alt="Tik tok"></a>
                 </div>
                 <div class="containerLabelNavbarInfo">
                     <label>
@@ -32,6 +34,10 @@
                 </div>
                 <div class="containerLogoNavbarInfo">
                     <img src="./assets/logo.jpg" alt="">
+                    <!-- <div class="containerLogoNavbarInfo"> -->
+                        <img onclick="openModal('loginModal')" src="./assets/User.png" alt="">
+                        <label onclick="userInformation()" id="labelUser"></label>
+                    <!-- </div> -->
                 </div>
             </div>
             <div class="containerNavBar">
@@ -60,9 +66,9 @@
 
     <main>
         <div class="containerBanner">
-             <img id="imageLeftBanner" src="./assets/ImageLefttBanner.png" alt="">
-             <img id="imageTitleBanner" src="./assets/TitleBanner.png" alt="">
-             <img id="imageRightBanner" src="./assets/ImageRightBanner.png" alt="">
+            <img id="imageLeftBanner" src="./assets/ImageLefttBanner.png" alt="">
+            <img id="imageTitleBanner" src="./assets/TitleBanner.png" alt="">
+            <img id="imageRightBanner" src="./assets/ImageRightBanner.png" alt="">
         </div>
     </main>
 
@@ -76,13 +82,113 @@
         </div>
         <div class="containerSocialMediaFooter">
             <div>
-                <a target="_blank" href="https://www.instagram.com/ashly_perfectwig?igsh=cTdvNDRham5mNDNk"><img src="./assets/Instagram.png"
-                        alt="Instagram"></a>
-                <a target="_blank" href="https://www.whatsapp.com/catalog/573226994908/?app_absent=0"><img id="WhatsAppFooter" src="./assets/WhatsApp.png" alt="Whatsapp"></a>
-                <a target="_blank" href="https://www.tiktok.com/@ashly_perfectwig?_t=8n6Jut8GwlR&_r=1"><img src="./assets/TikTok.png" alt="Tik tok"></a>
+                <a target="_blank" href="https://www.instagram.com/ashly_perfectwig?igsh=cTdvNDRham5mNDNk"><img
+                        src="./assets/Instagram.png" alt="Instagram"></a>
+                <a target="_blank" href="https://www.whatsapp.com/catalog/573226994908/?app_absent=0"><img
+                        id="WhatsAppFooter" src="./assets/WhatsApp.png" alt="Whatsapp"></a>
+                <a target="_blank" href="https://www.tiktok.com/@ashly_perfectwig?_t=8n6Jut8GwlR&_r=1"><img
+                        src="./assets/TikTok.png" alt="Tik tok"></a>
             </div>
         </div>
     </footer>
+
+    <div class="modal" tabindex="-1" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar sesión</h5>
+                    <button onclick="closeModal('loginModal')" type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <form id="loginForm">
+                    <div class="modal-body">
+                        <input type="email" class="form-control" id="emailLogin" placeholder="Correo electronico"
+                            required>
+                        <br>
+                        <input type="password" class="form-control" id="passwordLogin" placeholder="Contraseña"
+                            required>
+                        <br>
+                        <label>¿Aun no estas registrado? <label
+                                onclick="{openModal('registerModal'), closeModal('loginModal')}"
+                                style="text-decoration: dashed;">Registrate aqui</label></label>
+
+                        <div class="modal-footer">
+                            <button onclick="closeModal('loginModal')" type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="registerModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrarse</h5>
+                    <button onclick="closeModal('registerModal')" type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <form id="registerForm">
+                    <div class="modal-body">
+                        <input type="text" class="form-control" id="nameRegister" placeholder="Nombre"
+                            required>
+                        <br>
+                        <input type="email" class="form-control" id="emailRegister" placeholder="Correo"
+                            required>
+                        <br>
+                        <input type="text" class="form-control" id="adressRegister" placeholder="disrección"
+                            required>
+                        <br>
+                        <input type="password" class="form-control" id="passwordRegister" placeholder="Contraseña" required>
+                        <div class="modal-footer">
+                            <button onclick="closeModal('registerModal')" type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Resgistrarse</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <h4>Registro</h4>
+            <form id="registerForm">
+                <input id="nameRegister" type="text" placeholder="Nombre" required>
+                <input id="emailRegister" type="email" placeholder="Correo" required>
+                <input id="adressRegister" type="text" placeholder="Dirección" required>
+                <input id="passwordRegister" type="password" placeholder="Contraseña" required>
+                <button type="submit">Resgistrarse</button>
+                <button class="close" onclick="closeModal('registerModal')">Cancelar</button>
+            </form>
+        </div>
+    </div> -->
+
+    <!-- <div id="loginModaljeje" class="modal">
+        <div class="modal-content">
+            <h4>Iniciar Sesión</h4>
+            <form id="loginForm">
+                <input type="email" id="emailLogin" placeholder="Correo" required>
+                <input type="password" id="passwordLogin" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <label>¿Aun no estas registrado? <label onclick="{openModal('registerModal'), closeModal('loginModal')}"
+                    style="text-decoration: dashed;">Registrate aqui</label></label>
+            <button class="close" onclick="closeModal('loginModal')">Cancelar</button>
+        </div>
+    </div> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/main.js"></script>
 
 </body>
 
